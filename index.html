@@ -155,14 +155,6 @@
   .cert { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; font-weight: 600; }
   .cert span { color: var(--text-dim); font-family: 'JetBrains Mono'; font-size: 0.8rem; font-weight: 400; }
 
-  /* Cover letter */
-  .cl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  @media (max-width: 720px) { .cl-grid { grid-template-columns: 1fr; } }
-  .cl-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
-  .cl-item h3 { font-size: 0.98rem; color: var(--accent-2); margin-bottom: 10px; }
-  .cl-item p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.75; }
-  .cl-item b { color: var(--text); font-weight: 600; }
-
   footer { padding: 50px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 40px; }
 </style>
 </head>
@@ -176,7 +168,6 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#cover-letter">자기소개서</a>
       <a href="#education">Education</a>
     </div>
   </div>
@@ -382,30 +373,6 @@
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<section id="cover-letter">
-  <div class="wrap">
-    <div class="section-title">자기소개서</div>
-    <div class="cl-grid">
-      <div class="cl-item">
-        <h3>성장과정</h3>
-        <p>산업공학을 전공하며 데이터와 시스템 관점에서 문제를 정의하고 최적화하는 훈련을 받았고, 학부연구생으로 제조 공정 데이터를 분석하며 <b>‘현상을 수치로 검증하는’ 태도</b>를 길렀습니다. 이후 로보틱스 부트캠프에서 ROS2·시뮬레이션·자율주행·비전을 직접 구현하며 소프트웨어로 로봇을 움직이는 경험에 매력을 느꼈고, 현재는 <b>NVIDIA Isaac Sim 기반 시뮬레이션과 Sim-to-Real</b>을 실무로 다루는 로보틱스 엔지니어로 성장하고 있습니다.</p>
-      </div>
-      <div class="cl-item">
-        <h3>성격의 장단점</h3>
-        <p><b>‘실물에 적용하기 전에 시뮬레이션에서 끝까지 검증한다’</b>는 원칙을 중요하게 생각합니다. 디지털 트윈으로 미리 문제를 찾아내고 결과를 데이터로 확인해 개선하는 꼼꼼함이 강점입니다. 처음 맡는 영역도 문서·포럼·코드를 파고들어 환경을 직접 구성해내는 자기주도성이 있습니다. 다만 완성도에 집중하다 보면 일정 대비 과하게 파고드는 경향이 있어, <b>우선순위와 마감 기준을 먼저 정하고</b> 진행하는 방식으로 보완하고 있습니다.</p>
-      </div>
-      <div class="cl-item">
-        <h3>지원동기</h3>
-        <p>실물 로봇을 다루기 전에 시뮬레이션에서 검증하고, 검증한 결과를 실물로 옮기는 과정에 매력을 느껴 <b>로봇 시뮬레이션·Sim-to-Real</b> 분야를 이어왔습니다. Isaac Sim으로 AMR과 매니퓰레이터를 검증하고 센서·물리·제어·ROS2를 연동해 온 경험을 바탕으로, <b>ROS/ROS2 기반 로봇 제어와 시뮬레이션 개발</b>에 바로 기여하고 싶어 지원했습니다.</p>
-      </div>
-      <div class="cl-item">
-        <h3>입사 후 포부</h3>
-        <p>Isaac Sim 환경에서 로봇 모델링·센서 구성·동작 검증과 디지털 트윈 검증 환경을 안정적으로 구축하고, <b>시뮬레이션과 실제 로봇 간 연동 구조를 설계·고도화</b>하는 데 기여하겠습니다. 나아가 로봇 제어·인식·시뮬레이션을 아우르는 <b>시스템 관점의 전문성</b>을 갖춘 엔지니어로 성장하겠습니다.</p>
-      </div>
     </div>
   </div>
 </section>
