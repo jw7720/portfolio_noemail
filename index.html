@@ -155,6 +155,14 @@
   .cert { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 18px; font-weight: 600; }
   .cert span { color: var(--text-dim); font-family: 'JetBrains Mono'; font-size: 0.8rem; font-weight: 400; }
 
+  /* Cover letter */
+  .cl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 720px) { .cl-grid { grid-template-columns: 1fr; } }
+  .cl-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+  .cl-item h3 { font-size: 0.98rem; color: var(--accent-2); margin-bottom: 10px; }
+  .cl-item p { color: var(--text-dim); font-size: 0.92rem; line-height: 1.75; }
+  .cl-item b { color: var(--text); font-weight: 600; }
+
   footer { padding: 50px 0 60px; text-align: center; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 40px; }
 </style>
 </head>
@@ -168,6 +176,7 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#cover-letter">자기소개서</a>
       <a href="#education">Education</a>
     </div>
   </div>
@@ -199,17 +208,19 @@
   <div class="wrap">
     <div class="section-title">About Me</div>
     <p>
-      <b style="color:var(--text)">NVIDIA Isaac Sim으로 로봇 디지털 트윈과 시뮬레이션 환경을 구축해, 실물 로봇 도입 전에 검증해 온</b> 엔지니어입니다.
+      <b style="color:var(--text)">NVIDIA Isaac Sim / Isaac Lab 기반으로 로봇 시뮬레이션·강화학습(RL)과 Sim-to-Real을 다뤄 온</b> 로보틱스 엔지니어입니다.
       설계 파일(SolidWorks)에서 URDF·USD로 변환하고, 센서(카메라·LiDAR)·물리·controller·planner·ROS2를 연동해
       "실물이 오기 전에 미리 돌려볼 수 있는" 시뮬레이션 환경을 구성합니다.
-      바퀴형 AMR(메카넘·지게차)뿐 아니라 6축 매니퓰레이터(Dobot Nova2)까지 Isaac Sim 디지털 트윈으로 다뤄봤고,
-      메카넘 AMR 실물 자율주행(SLAM·Nav2·사람 감지)과 시뮬레이션 동작을 실물로 옮기는 Sim-to-Real 경험을 갖췄습니다.
+      바퀴형 AMR(메카넘·지게차)과 6축 매니퓰레이터(Dobot Nova2)를 Isaac Sim으로 다뤘고,
+      메카넘 AMR 실물 자율주행과 시뮬레이션 동작을 실물로 옮기는 Sim-to-Real, 그리고 현재
+      <b style="color:var(--text)">4축 로봇 카메라 캘리브레이션 &amp; 강화학습(Isaac Lab)</b>을 진행하고 있습니다.
     </p>
     <ul>
-      <li><b>Isaac Sim 디지털 트윈 구축</b>에 강점 — 설계→URDF→USD 변환, 센서·물리·제어·ROS2 연동으로 실물 도입 전 검증 환경을 구현.</li>
-      <li><b>AMR(메카넘·지게차)</b>과 <b>6축 매니퓰레이터(Dobot Nova2)</b>를 모두 시뮬레이션·디지털 트윈으로 구축한 경험.</li>
+      <li><b>Isaac Sim 시뮬레이션 환경 구축</b>에 강점 — 설계→URDF→USD 변환, 센서·물리·제어·ROS2 연동으로 실물 도입 전 검증 환경을 구현.</li>
+      <li><b>AMR(메카넘·지게차)</b>과 <b>6축 매니퓰레이터(Dobot Nova2)</b>를 모두 Isaac Sim으로 구축·검증한 경험.</li>
       <li>자율주행 스택(SLAM · Nav2 · 경로 계획 · 도킹)을 시뮬레이션과 <b>실물 AMR</b> 양쪽에서 구현·적용.</li>
-      <li><b>Sim-to-Real</b> — 시뮬레이션에서 검증한 동작을 실물 로봇(AMR·매니퓰레이터)으로 연동하는 흐름을 다뤄봄.</li>
+      <li><b>Sim-to-Real</b> — 시뮬레이션에서 검증한 동작을 커스텀 ROS2 브리지로 실물 로봇(AMR·매니퓰레이터)에 연동.</li>
+      <li>현재 <b>Isaac Lab 기반 4축 로봇 강화학습(RL)·카메라 캘리브레이션</b>을 진행하며 학습 기반 제어로 역량 확장 중.</li>
       <li>데이터 분석(EDA·통계·머신러닝) 배경으로 센서 데이터·결과를 정량 분석·검증.</li>
     </ul>
   </div>
@@ -265,14 +276,15 @@
     <div class="projects">
 
       <div class="proj">
-        <div class="proj-head"><span class="proj-num">01</span><h3>로봇 카메라 캘리브레이션 &amp; 강화학습</h3><span class="badge">진행 중</span></div>
+        <div class="proj-head"><span class="proj-num">01</span><h3>로봇 카메라 캘리브레이션 &amp; 4축 로봇 강화학습</h3><span class="badge">진행 중</span></div>
         <div class="proj-date">📅 2026.06 ~ 진행 중</div>
-        <div class="tags"><span class="tag">Isaac Lab</span><span class="tag">Isaac Sim</span><span class="tag">RL</span><span class="tag">Camera Calibration</span><span class="tag">Python</span></div>
-        <p class="lead">로봇 비전 캘리브레이션과 로봇의 강화학습(RL) 기반 동작 학습을 진행 중.</p>
+        <div class="tags"><span class="tag">Isaac Lab</span><span class="tag">Isaac Sim</span><span class="tag">RL</span><span class="tag">Camera Calibration</span><span class="tag">Mixed Palletizing</span><span class="tag">Python</span></div>
+        <p class="lead">카메라 캘리브레이션으로 비전-로봇 좌표를 정합하고, Mixed Palletizing(혼적 적재)용 4축 산업용 로봇을 Isaac Lab에서 강화학습(RL) 기반 동작으로 학습·검증하는 파이프라인을 구축 중.</p>
         <ul>
-          <li>로봇 카메라 캘리브레이션으로 비전 좌표와 로봇 좌표를 정합.</li>
-          <li>로봇을 대상으로 Isaac Lab 시뮬레이션 환경에서 강화학습(RL) 기반 동작 학습·테스트 수행 중.</li>
-          <li><b>의의</b>: 시뮬레이션 기반 로봇 학습과 AI 모델을 로봇 제어에 적용하는 경험 확장.</li>
+          <li><b>카메라 캘리브레이션</b>: 비전 좌표 ↔ 로봇 좌표 정합을 수행.</li>
+          <li><b>비전 기반 파지(grasp)</b>: RGB-D 카메라 인식으로 물체를 인식·파지하는 동작을 시뮬레이션에서 검증.</li>
+          <li><b>RL 환경/학습</b>: 4축 로봇을 대상으로 Isaac Lab 시뮬레이션 환경에서 강화학습(RL) 기반 동작을 학습·테스트.</li>
+          <li><b>의의</b>: 시뮬레이션 기반 로봇 학습과 AI 모델을 로봇 제어에 적용하는 역량으로 확장.</li>
         </ul>
       </div>
 
@@ -280,12 +292,13 @@
         <div class="proj-head"><span class="proj-num">02</span><h3>Isaac Sim 지게차(Forklift) AMR 주행 테스트 환경 구축</h3></div>
         <div class="proj-date">📅 2026.01 ~ 2026.06</div>
         <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span></div>
-        <p class="lead">실물 지게차 AMR이 도입되기 전에 미리 검증할 수 있는 Isaac Sim 시뮬레이션 환경을 구축.</p>
+        <p class="lead">실물 지게차 제작·도입 전에 업체의 실제 창고를 Isaac Sim에 재현해 자율주행·정밀 도킹까지 완성하고, 검증된 ROS2 스택을 실물 지게차로 그대로 이관하는 것을 목표로 한 프로젝트. USD·URDF 제작부터 주행·도킹까지 거의 단독으로 파이프라인을 구축.</p>
         <ul>
-          <li><b>시뮬레이션 환경 구성</b>: 실제 창고 환경을 Isaac Sim 내부에 구성, 카메라·LiDAR·바퀴 등 센서/구동부 세팅, 물리(physics) 속성 구성.</li>
-          <li><b>제어/주행 연동</b>: controller·planner(Nav2)·SLAM·도킹을 ROS2로 연동해 실물 없이 주행·도킹 테스트.</li>
-          <li><b>관제 연동</b>: 관제 UI ↔ Backend ↔ AMR Backend(ROS2) ↔ Isaac Sim 4-Tier 아키텍처 연동.</li>
-          <li><b>설계 → 시뮬 자산 변환 (프로젝트 후반 진행)</b>: SolidWorks 설계에서 URDF를 추출하고 USD로 변환해 로봇 모델 제작. 설계 자료 입수가 지연되어 마지막 단계에 진행됐고, 실제 설계 파일 기반 테스트까지는 진행하지 못함.</li>
+          <li><b>USD·URDF 제작 (단독)</b>: SolidWorks 설계 → URDF → USD 변환으로 지게차 모델을 제작하고, 업체 <b>실제 공장 규모를 Isaac Sim 창고 씬으로 1:1 구현</b>. USD 에셋은 OpenUSD(pxr)·Git LFS로 버전관리.</li>
+          <li><b>SLAM·측위</b>: ZED 카메라 기반 RTAB-Map SLAM으로 창고 mapping을 생성하고, EKF(robot_localization)로 휠 odometry와 센서를 융합해 위치 추정 안정성을 확보.</li>
+          <li><b>자율주행</b>: Nav2에서 전역 경로는 Smac Planner, 지역 경로는 TEB(Timed Elastic Band) local planner로 구성. 후륜 조향 지게차 특성에 맞춘 Ackermann 제약 behavior tree를 적용·튜닝.</li>
+          <li><b>정밀 도킹</b>: opennav_docking 기반 커스텀 도킹 플러그인을 직접 구현해 AprilTag로 도킹 스테이션을 인식→접근→정렬하는 정밀 도킹까지 완료.</li>
+          <li><b>관제 연동</b>: amr_bridge(WebSocket)로 관제 UI ↔ 관제 Backend ↔ AMR Backend(ROS2) ↔ Isaac Sim/실물 지게차의 4-Tier 관제 아키텍처를 구성.</li>
         </ul>
         <div class="proj-videos">
           <div class="vid-item">
@@ -310,13 +323,13 @@
       <div class="proj">
         <div class="proj-head"><span class="proj-num">03</span><h3>Dobot Nova2 매니퓰레이터 — 디지털 트윈 &amp; Sim-to-Real</h3><span class="badge">Sim-to-Real</span></div>
         <div class="proj-date">📅 2026.01 ~ 2026.04</div>
-        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">Dobot Nova2</span><span class="tag">USD</span><span class="tag">ROS2</span><span class="tag">MoveIt</span><span class="tag">Digital Twin</span></div>
-        <p class="lead">6축 매니퓰레이터 Dobot Nova2를 Isaac Sim 디지털 트윈으로 구축해 팔레타이징·파지를 검증하고, 실물 로봇까지 연동(Sim-to-Real)한 프로젝트.</p>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">Dobot Nova2</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">MoveIt</span><span class="tag">Sim-to-Real</span></div>
+        <p class="lead">6축 매니퓰레이터 Dobot Nova2를 Isaac Sim 디지털 트윈으로 구축하고, 커스텀 ROS2 브리지로 가상·실물을 동시에 구동하는 Sim-to-Real 구조를 단독으로 구현한 프로젝트.</p>
         <ul>
-          <li><b>팔레타이징 디지털 트윈</b>: 작업 환경·Nova2·박스를 USD로 제작하고 Isaac Sim 씬을 구성, ROS2로 연결해 디지털 트윈 연동. 충돌 회피(물체 회피) 모션 플래닝과 박스 적재 가능성(placeability) 판정 로직 연계.</li>
-          <li><b>비전 기반 파지(grasp)</b>: RGB-D 카메라 인식과 파지 계획을 Isaac Sim에서 시뮬레이션해 물체 인식 → 파지 동작을 검증.</li>
-          <li><b>Sim-to-Real 연동</b>: ROS2 → Isaac Sim → 실물 Nova2 명령 흐름을 설계하고 커스텀 브리지(nova2_real_bridge)로 제어 SW와 실물 액추에이터(관절)를 연동. JointState 토픽으로 가상·실물을 동시 제어하고 MoveIt 기반 양방향 연동 launch를 구성.</li>
-          <li><b>의의</b>: 매니퓰레이터 작업을 시뮬레이션 디지털 트윈에서 사전 검증하고 그대로 실물로 옮기는 Sim-to-Real 파이프라인을 직접 경험.</li>
+          <li><b>USD·URDF 직접 제작</b>: Nova2 로봇을 URDF로, 작업대·박스 등 환경을 USD로 직접 제작해 Isaac Sim 씬을 구성하고, 관절·그리퍼를 ROS2 토픽으로 제어할 수 있도록 연결.</li>
+          <li><b>디지털 트윈 동작 연동</b>: 구성한 Isaac Sim 씬을 실물 Nova2와 ROS2로 연동해, 시뮬레이션 명령대로 가상·실물이 동일하게 움직이는 단계까지 구현·검증. (이후 적재 순서·placeability 등 팔레타이징 판정 로직은 별도 담당자가 진행)</li>
+          <li><b>Sim-to-Real 브리지 개발(단독)</b>: ROS2 → Isaac Sim → 실물 Nova2 명령 흐름을 설계하고 커스텀 브리지 패키지(nova2_real_bridge)를 직접 개발. MoveIt 명령을 가상(Isaac Sim)과 실물에 동시에 전달하고 JointState로 양방향 동기화하는 launch를 구성.</li>
+          <li><b>의의</b>: 매니퓰레이터 동작을 디지털 트윈에서 사전 검증하고 동일 명령으로 가상·실물을 동시 구동하는 Sim-to-Real 워크플로우를 USD·URDF 제작부터 브리지까지 단독으로 구현.</li>
         </ul>
         <div class="proj-videos">
           <div class="vid-item">
@@ -337,13 +350,13 @@
       <div class="proj">
         <div class="proj-head"><span class="proj-num">04</span><h3>Mecanum Wheel AMR — Isaac Sim 시뮬레이션 + 실물 자율주행</h3><span class="badge">Sim-to-Real</span></div>
         <div class="proj-date">📅 2025.10 ~ 2026.01</div>
-        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">ZED</span><span class="tag">Jetson</span></div>
-        <p class="lead">메카넘 휠 AMR을 Isaac Sim에서 구현하고, 실물 로봇으로 자율주행까지 이어간 프로젝트.</p>
+        <div class="tags"><span class="tag">Isaac Sim</span><span class="tag">USD</span><span class="tag">URDF</span><span class="tag">ROS2</span><span class="tag">Nav2</span><span class="tag">SLAM</span><span class="tag">SAM</span><span class="tag">ZED</span><span class="tag">Odometry</span></div>
+        <p class="lead">메카넘 휠 AMR을 Isaac Sim에서 구현해 실물 주행 전 문제 요소를 사전 점검하고, 시뮬레이션에서 완성한 코드를 실물로 이관해 자율주행까지 완료한 프로젝트.</p>
         <ul>
-          <li><b>시뮬레이션 구현</b>: 설계 → URDF → USD 변환, Isaac Sim에서 메카넘 휠이 물리적으로 구르도록 전 과정 구현. ROS2로 카메라·LiDAR 연동해 간단한 자율주행까지 시뮬레이션.</li>
-          <li><b>실물 자율주행(Sim-to-Real)</b>: 실물 메카넘 AMR에서 ZED 카메라 기반 odometry 측위·SLAM·Nav2 자율주행 구동. 연산 부하 분산을 위해 제어박스/센서박스(Jetson)로 하드웨어 분리.</li>
-          <li><b>사람 감지 &amp; 안전 계층</b>: 4채널 ZED 사람 감지(Person Detect)와 Nav2 독립 안전 계층(Collision Monitor)으로 사람 감지 시 감속·정지.</li>
-          <li><b>현장 설비 연동</b>: 팔레타이징 설비와 AMR을 TCP 소켓으로 연동해 하나의 작업 흐름으로 동작.</li>
+          <li><b>시뮬레이션 환경 구축</b>: 설계 → URDF → USD 변환으로 메카넘 휠이 물리적으로 구르는 Isaac Sim 환경을 구현하고, ROS2로 카메라·LiDAR를 연동해 자율주행 시뮬레이션을 구성. 실물 주행 전 카메라·동작 구동·주행 시나리오를 사전 점검.</li>
+          <li><b>스테레오 depth 파이프라인</b>: Isaac Sim 스테레오 카메라를 입력받는 ROS2 패키지를 구현 — 좌·우 영상 → S2M2(스테레오 매칭 depth 추정) → disparity/depth → PointCloud2 변환·시각화까지의 흐름을 구성.</li>
+          <li><b>인식 연구</b>: 위 depth·포인트클라우드와 SAM 계열(세그멘테이션)을 결합해 장애물 탐지를 최종 목표로 연구. 실물은 ZED(zed-ros2-wrapper) 스테레오 입력을 사용.</li>
+          <li><b>실물 자율주행(Sim-to-Real)</b>: 실물 메카넘 AMR에서 ROS2 연동, 사람 탐지 알고리즘 파라미터 튜닝, Isaac Sim에서 작성한 코드를 실물로 이식해 자율주행을 직접 완료. 측위·주행은 카메라 기반 odometry·SLAM·Nav2로 구성.</li>
         </ul>
         <div class="proj-videos">
           <div class="vid-item">
@@ -369,6 +382,30 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="cover-letter">
+  <div class="wrap">
+    <div class="section-title">자기소개서</div>
+    <div class="cl-grid">
+      <div class="cl-item">
+        <h3>성장과정</h3>
+        <p>산업공학을 전공하며 데이터와 시스템 관점에서 문제를 정의하고 최적화하는 훈련을 받았고, 학부연구생으로 제조 공정 데이터를 분석하며 <b>‘현상을 수치로 검증하는’ 태도</b>를 길렀습니다. 이후 로보틱스 부트캠프에서 ROS2·시뮬레이션·자율주행·비전을 직접 구현하며 소프트웨어로 로봇을 움직이는 경험에 매력을 느꼈고, 현재는 <b>NVIDIA Isaac Sim 기반 시뮬레이션과 Sim-to-Real</b>을 실무로 다루는 로보틱스 엔지니어로 성장하고 있습니다.</p>
+      </div>
+      <div class="cl-item">
+        <h3>성격의 장단점</h3>
+        <p><b>‘실물에 적용하기 전에 시뮬레이션에서 끝까지 검증한다’</b>는 원칙을 중요하게 생각합니다. 디지털 트윈으로 미리 문제를 찾아내고 결과를 데이터로 확인해 개선하는 꼼꼼함이 강점입니다. 처음 맡는 영역도 문서·포럼·코드를 파고들어 환경을 직접 구성해내는 자기주도성이 있습니다. 다만 완성도에 집중하다 보면 일정 대비 과하게 파고드는 경향이 있어, <b>우선순위와 마감 기준을 먼저 정하고</b> 진행하는 방식으로 보완하고 있습니다.</p>
+      </div>
+      <div class="cl-item">
+        <h3>지원동기</h3>
+        <p>실물 로봇을 다루기 전에 시뮬레이션에서 검증하고, 검증한 결과를 실물로 옮기는 과정에 매력을 느껴 <b>로봇 시뮬레이션·Sim-to-Real</b> 분야를 이어왔습니다. Isaac Sim으로 AMR과 매니퓰레이터를 검증하고 센서·물리·제어·ROS2를 연동해 온 경험을 바탕으로, <b>ROS/ROS2 기반 로봇 제어와 시뮬레이션 개발</b>에 바로 기여하고 싶어 지원했습니다.</p>
+      </div>
+      <div class="cl-item">
+        <h3>입사 후 포부</h3>
+        <p>Isaac Sim 환경에서 로봇 모델링·센서 구성·동작 검증과 디지털 트윈 검증 환경을 안정적으로 구축하고, <b>시뮬레이션과 실제 로봇 간 연동 구조를 설계·고도화</b>하는 데 기여하겠습니다. 나아가 로봇 제어·인식·시뮬레이션을 아우르는 <b>시스템 관점의 전문성</b>을 갖춘 엔지니어로 성장하겠습니다.</p>
+      </div>
     </div>
   </div>
 </section>
